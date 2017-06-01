@@ -4,8 +4,8 @@
 
   <parent>
     <groupId>org.setamv</groupId>
-    <artifactId>finance</artifactId>
-    <version>${project.version}</version>
+    <artifactId>mavenex</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>server-side</artifactId>
   <packaging>pom</packaging>
@@ -17,5 +17,4 @@
   	<module>server-lib</module>
     <module>web-apps</module>
   </modules>
-
 </project>

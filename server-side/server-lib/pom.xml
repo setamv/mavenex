@@ -4,13 +4,29 @@
 
   <parent>
     <groupId>org.setamv</groupId>
-    <artifactId>server-side</artifactId>
-    <version>${project.version}</version>
+    <artifactId>mavenex</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../../../mavenex/pom.xml</relativePath>
   </parent>
-  <artifactId>server-side</artifactId>
+  <artifactId>server-lib</artifactId>
   <packaging>pom</packaging>
 
-  <name>server-side</name>
+  <name>server-lib</name>
   <url>http://maven.apache.org</url>
+  
+  <dependencies>
+  	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	</dependency>
+  	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpcore</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient</artifactId>
+	</dependency>
+  </dependencies>
 
 </project>

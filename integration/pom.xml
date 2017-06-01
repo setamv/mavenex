@@ -4,8 +4,8 @@
 
   <parent>
     <groupId>org.setamv</groupId>
-    <artifactId>finance</artifactId>
-    <version>${project.version}</version>
+    <artifactId>mavenex</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>integration</artifactId>
   <packaging>pom</packaging>
@@ -14,8 +14,65 @@
   <url>http://maven.apache.org</url>
   
   <modules>
-  	<module>client-side</module>
-    <module>server-side</module>
+  	<module>../client-side</module>
+    <module>../server-side</module>
   </modules>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-antrun-plugin</artifactId>
+  			<version>1.8</version>
+  			<executions>
+  				<execution>
+  					<id>file-exists</id>
+  					<phase>pre-clean</phase>
+  					<goals>
+  						<goal>run</goal>
+  					</goals>
+  					<configuration>
+  						<tasks>
+  							<!-- adds the ant-contrib tasks (if/then/else used below) -->
+  							<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+							<available 
+									file="${project.build.directory}/${project.build.finalName}.${project.packaging}"
+									property="file.exists" value="true"/>
+							<if>
+								<not>
+									<isset property="file.exists" />
+								</not>
+								<then>
+									<echo>No ${project.build.finalName}.${project.packaging} to delete</echo>
+								</then>
+								<else>
+									<echo>Deleting ${project.build.finalName}.${project.packaging}</echo>
+								</else>
+							</if>
+  						</tasks>
+  					</configuration>
+  				</execution>
+  			</executions>
+  			<dependencies>
+  				<dependency>
+  					<groupId>ant-contrib</groupId>
+					<artifactId>ant-contrib</artifactId>
+					<version>1.0b3</version>
+					<exclusions>
+						<exclusion>
+							<groupId>ant</groupId>
+      						<artifactId>ant</artifactId>
+						</exclusion>
+					</exclusions>
+  				</dependency>
+			  	<dependency>
+				    <groupId>org.apache.ant</groupId>
+				    <artifactId>ant</artifactId>
+				    <version>1.9.9</version>
+				</dependency>
+  			</dependencies>
+  		</plugin>
+  	</plugins>
+  </build>
 
 </project>

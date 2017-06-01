@@ -4,13 +4,13 @@
 
   <parent>
     <groupId>org.setamv</groupId>
-    <artifactId>finance</artifactId>
-    <version>${prj.version}</version>
+    <artifactId>mavenex</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>swing-app</artifactId>
+  <artifactId>client-side</artifactId>
   <packaging>pom</packaging>
 
-  <name>swing-app</name>
+  <name>client-side</name>
   <url>http://maven.apache.org</url>
   
   <modules>

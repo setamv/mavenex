@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.setamv</groupId>
     <artifactId>web-apps</artifactId>
-    <version>${project.version}</version>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>admin-web</artifactId>
   <packaging>war</packaging>
@@ -13,4 +13,49 @@
   <name>admin-web</name>
   <url>http://maven.apache.org</url>
 
+  <properties>
+  	<env.profile>dev</env.profile>
+  </properties>
+
+  <build>
+  	<filters>
+  		<filter>src/main/resources/jdbc/jdbc_${env.profile}.properties</filter>
+  	</filters>
+  	<resources>
+  		<resource>
+  			<directory>src/main/resources</directory>
+  			<filtering>true</filtering>
+  		</resource>
+  		<resource>
+  			<directory>src/main/xml</directory>
+  			<targetPath>xml</targetPath>
+  		</resource>
+  		<resource>
+  			<directory>src/main/images</directory>
+  			<targetPath>images</targetPath>
+  		</resource>
+  		<resource>
+  			<directory>src/main/log</directory>
+  			<includes>
+  				<include>**log_config_${env.profile}/log4j.properties</include>
+  			</includes>
+  			<targetPath>.</targetPath>
+  		</resource>
+  	</resources>
+  	
+  	<plugins>
+  		<plugin>
+  			<artifactId>maven-compiler-plugin</artifactId>
+  			<configuration>
+  				<source>1.8</source>
+  				<target>1.8</target>
+  			</configuration>
+  			<executions>
+  				<execution></execution>
+  			</executions>
+  		</plugin>
+  	</plugins>
+  	
+  	
+  </build>
 </project>

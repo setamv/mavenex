@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animal>
+	<dog>
+		<weight>10kg</weight>
+		<height>50cm</height>
+		<sound>wang wang wang</sound>
+	</dog>
+	<cat>
+		<weight>3kg</weight>
+		<height>30cm</height>
+		<sound>miao miao</sound>
+	</cat>
+</animal>

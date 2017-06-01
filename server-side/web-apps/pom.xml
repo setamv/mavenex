@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.setamv</groupId>
     <artifactId>server-side</artifactId>
-    <version>${project.version}</version>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>web-apps</artifactId>
   <packaging>pom</packaging>
